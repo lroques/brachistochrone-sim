@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: brachistochrone-sim
+    env: docker
+    plan: free
+    autoDeploy: true

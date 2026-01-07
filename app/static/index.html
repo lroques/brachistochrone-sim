@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brachistochrone Simulator</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Simulation — Brachistochrone</h1>
+    <p>Choisis une courbe, puis lance la bille.</p>
+  </header>
+
+  <section class="controls">
+    <label>Courbe :
+      <select id="curveSelect">
+        <option value="line">Droite</option>
+        <option value="circle">Arc de cercle (approx)</option>
+        <option value="cycloid" selected>Cycloïde (brachistochrone)</option>
+        <option value="bezier">Bezier (simple)</option>
+      </select>
+    </label>
+
+    <label>Gravité $g$ :
+      <input id="gInput" type="number" value="9.81" step="0.01" />
+    </label>
+
+    <label>Résolution :
+      <input id="nInput" type="number" value="400" step="50" min="100" />
+    </label>
+
+    <button id="runBtn">▶ Lancer</button>
+    <button id="resetBtn">⟲ Reset</button>
+
+    <div class="info">
+      <div>Temps total : <span id="timeOut">—</span> s</div>
+      <div>Courbe : <span id="curveOut">cycloid</span></div>
+    </div>
+  </section>
+
+  <main>
+    <canvas id="canvas" width="980" height="520"></canvas>
+  </main>
+
+  <footer>
+    <p>FastAPI + Canvas — prêt pour Docker / Render.</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
